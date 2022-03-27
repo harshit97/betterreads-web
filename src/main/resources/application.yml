@@ -1,15 +1,37 @@
-spring:
-  security:
-    oauth2:
-      client:
-        registration:
-          github:
-            client-id: 973e67deaae892c9675e
-            client-secret: 6c2a873b230754a3ac2a6460393159d24f668477
-
 logging:
   level:
     org:
       springframework:
         web: DEBUG
         security: DEBUG
+
+spring:
+  application:
+    name: betterreads
+  security:
+    oauth2:
+      client:
+        registration:
+          github:
+            client-id: # change to correct value
+            client-secret: # change to correct value
+  data:
+    cassandra:
+      keyspace-name: main_v2
+      username: # change to correct value
+      password: # change to correct value
+      schema-action: create-if-not-exists
+      request:
+        timeout: 10s
+      connection:
+        connect-timeout: 10s
+        init-query-timeout: 10s
+
+datastax.astra:
+  secure-connect-bundle: # change to correct value
+
+astra.db:
+  id: # change to correct value
+  region: # change to correct value
+  keyspace: # change to correct value
+  application.token: # change to correct value
